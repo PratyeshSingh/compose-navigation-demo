@@ -1,4 +1,4 @@
-package com.example.compose_navigation_demo
+package com.example.compose_navigation_demo.auth
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+
 
 @Composable
 fun LoginScreen(onClick: (AuthAction) -> Unit) {
