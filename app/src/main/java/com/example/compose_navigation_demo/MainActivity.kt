@@ -46,7 +46,7 @@ fun DetailsScreen(args: String?, onClick: (HomeAction) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.onPrimaryContainer),
+            .background(MaterialTheme.colorScheme.tertiaryContainer),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -60,7 +60,7 @@ fun AboutScreen(args: String?) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.onSecondaryContainer),
+            .background(MaterialTheme.colorScheme.tertiaryContainer),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
