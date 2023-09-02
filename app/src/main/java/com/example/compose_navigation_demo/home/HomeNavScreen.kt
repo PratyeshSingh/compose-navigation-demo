@@ -1,4 +1,4 @@
-package com.example.compose_navigation_demo
+package com.example.compose_navigation_demo.home
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
@@ -6,6 +6,9 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.navArgument
+import com.example.compose_navigation_demo.DetailsScreen
+import com.example.compose_navigation_demo.MainScreen
+import com.example.compose_navigation_demo.navigation.NavRoute
 
 fun NavGraphBuilder.homeNavScreen(
     navController: NavHostController,
@@ -17,7 +20,7 @@ fun NavGraphBuilder.homeNavScreen(
 
     with(this) {
         navigation(
-            route = Screen.Home.route,
+            route = NavRoute.Home.route,
             startDestination = Screen.MainScreen.route
         ) {
 

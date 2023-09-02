@@ -4,7 +4,8 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
-import com.example.compose_navigation_demo.Screen
+import com.example.compose_navigation_demo.navigation.NavRoute
+import com.example.compose_navigation_demo.home.Screen
 import com.example.compose_navigation_demo.sharedViewModel
 
 fun NavGraphBuilder.authNavScreen(
@@ -16,7 +17,7 @@ fun NavGraphBuilder.authNavScreen(
 
     with(this) {
         navigation(
-            route = Screen.AuthScreen.route,
+            route = NavRoute.AuthScreen.route,
             startDestination = AuthScreen.LoginScreen.route
         ) {
             composable(route = AuthScreen.RegisterScreen.route) {
@@ -55,7 +56,7 @@ private fun AuthAction.performClick(
             // Note: Ideally this should shit in Public module of home feature
             // But since this is a demo app so keeping it here to simplify for understanding
             navController.navigate(Screen.MainScreen.route) {
-                popUpTo(Screen.AuthScreen.route) {
+                popUpTo(NavRoute.AuthScreen.route) {
                     inclusive = true
                 }
             }
