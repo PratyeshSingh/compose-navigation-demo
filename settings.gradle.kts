@@ -49,10 +49,14 @@ rootProject.name = "compose-navigation-demo"
 include(":app")
 include(":demo")
 include(":lib")
-//include(":home")
 include(":compose-nav")
+include(":app-routes")
 
-include(":home-expereince:home-public", "home-expereince/home-public")
-include(":home-expereince:home-private", "home-expereince/home-private")
-include(":home-expereince:home-wiring", "home-expereince/home-wiring")
+include(":experience:home:home-public", "experience/home/home-public")
+include(":experience:home:home-private", "experience/home/home-private")
+include(":experience:home:home-wiring", "experience/home/home-wiring")
+
+include(":experience:auth:auth-public", "experience/auth/auth-public")
+include(":experience:auth:auth-private", "experience/auth/auth-private")
+include(":experience:auth:auth-wiring", "experience/auth/auth-wiring")
 

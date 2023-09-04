@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-//import com.example.compose_navigation_demo.auth.authNavScreen
+import com.example.auth.AuthScreenProvider.authNavScreen
 import com.example.home.HomeScreenProvider.homeNavScreen
 import com.example.home.Screen
 
@@ -12,7 +12,7 @@ import com.example.home.Screen
 fun Navigation() {
     val navController = rememberNavController()
 
-    val isAuthenticated = true
+    val isAuthenticated = false
 
     val startDestination = if (isAuthenticated) NavRoute.Home.route else NavRoute.AuthScreen.route
 
@@ -25,9 +25,9 @@ fun Navigation() {
             AboutScreen(args = it.arguments?.getString("name"))
         }
 
-//        authNavScreen(navController = navController)
+        authNavScreen(navGraphBuilder = this, navController = navController)
 
-        homeNavScreen(navController = navController)
+        homeNavScreen(navGraphBuilder = this, navController = navController)
     }
 
 }
