@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Composenavigationdemo"
         tools:targetApi="31">
         <activity
-            android:name=".ComposeNavigationDemoActivity"
+            android:name=".DemoActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Composenavigationdemo">

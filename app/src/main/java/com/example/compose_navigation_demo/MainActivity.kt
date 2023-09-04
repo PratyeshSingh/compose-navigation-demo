@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import com.example.compose_navigation_demo.home.HomeAction
 import com.example.compose_navigation_demo.navigation.Navigation
 
-class MainActivity : ComponentActivity() {
+class ComposeNavigationDemoActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
