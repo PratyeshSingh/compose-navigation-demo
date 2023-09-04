@@ -4,9 +4,9 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
-import com.example.compose_navigation_demo.navigation.NavRoute
-import com.example.compose_navigation_demo.home.Screen
+import com.example.compose_nav.NavRoute
 import com.example.compose_navigation_demo.sharedViewModel
+import com.example.home.Screen
 
 fun NavGraphBuilder.authNavScreen(
     navController: NavHostController,

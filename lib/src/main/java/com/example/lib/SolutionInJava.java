@@ -1,5 +1,7 @@
 package com.example.lib;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -10,13 +12,21 @@ public class SolutionInJava {
         System.out.println("Hello");
 
         ExecutorService service = Executors.newFixedThreadPool(10);
-        // for
-        service.execute(new IOTask());
+        // for download image
+//        List<String> images = new ArrayList<>();
+//        for (String image : images) {
+//            service.execute(new IOTask(image));
+//        }
+
+//        service.execute(new IOTask());
         service.execute(new NetworkTask());
+
+        service.shutdown();
 
     }
 }
-class NetworkTask implements Runnable{
+
+class NetworkTask implements Runnable {
 
     @Override
     public void run() {
@@ -24,7 +34,13 @@ class NetworkTask implements Runnable{
     }
 }
 
-class IOTask implements Runnable{
+class IOTask implements Runnable {
+
+    private String imageUrl = "";
+
+    IOTask(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     @Override
     public void run() {

@@ -1,4 +1,4 @@
-package com.example.compose_navigation_demo.navigation
+package com.example.compose_nav
 
 sealed class NavRoute(val route: String) {
     object AuthScreen : NavRoute("auth")

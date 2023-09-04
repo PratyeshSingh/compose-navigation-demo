@@ -1,4 +1,4 @@
-package com.example.compose_navigation_demo.home
+package com.example.home
 
 enum class HomeAction {
     MAIN,
