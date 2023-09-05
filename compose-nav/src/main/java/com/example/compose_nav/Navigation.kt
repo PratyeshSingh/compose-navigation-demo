@@ -11,23 +11,15 @@ import com.example.home.Screen
 @Composable
 fun Navigation() {
     val navController = rememberNavController()
-
     val isAuthenticated = false
-
     val startDestination = if (isAuthenticated) NavRoute.Home.route else NavRoute.AuthScreen.route
-
-
     NavHost(navController = navController, startDestination = startDestination) {
-
         composable(
             route = Screen.AboutScreen.route + "/{name}",   // Not Nullable
         ) {
             AboutScreen(args = it.arguments?.getString("name"))
         }
-
         authNavScreen(navGraphBuilder = this, navController = navController)
-
         homeNavScreen(navGraphBuilder = this, navController = navController)
     }
-
 }
