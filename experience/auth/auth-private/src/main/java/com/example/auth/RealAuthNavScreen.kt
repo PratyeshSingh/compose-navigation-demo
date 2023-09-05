@@ -17,28 +17,24 @@ class RealAuthNavScreen(
     }
 
     override fun NavGraphBuilder.authNavScreen() {
-
         val navigationRouter: (AuthAction) -> Unit = {
             it.performClick()
         }
-
-        with(this) {
-            navigation(
-                route = NavRoute.AuthScreen.route,
-                startDestination = AuthScreen.LoginScreen.route
-            ) {
-                composable(route = AuthScreen.RegisterScreen.route) {
-                    val viewModel = it.sharedViewModel<SampleViewModel>(navController)
-                    RegistrationScreen(onClick = navigationRouter)
-                }
-                composable(route = AuthScreen.LoginScreen.route) {
-                    val viewModel = it.sharedViewModel<SampleViewModel>(navController)
-                    LoginScreen(onClick = navigationRouter)
-                }
-                composable(route = AuthScreen.ForgotScreen.route) {
-                    val viewModel = it.sharedViewModel<SampleViewModel>(navController)
-                    ForgotScreen(onClick = navigationRouter)
-                }
+        navigation(
+            route = NavRoute.AuthScreen.route,
+            startDestination = AuthScreen.LoginScreen.route
+        ) {
+            composable(route = AuthScreen.RegisterScreen.route) {
+                val viewModel = it.sharedViewModel<SampleViewModel>(navController)
+                RegistrationScreen(onClick = navigationRouter)
+            }
+            composable(route = AuthScreen.LoginScreen.route) {
+                val viewModel = it.sharedViewModel<SampleViewModel>(navController)
+                LoginScreen(onClick = navigationRouter)
+            }
+            composable(route = AuthScreen.ForgotScreen.route) {
+                val viewModel = it.sharedViewModel<SampleViewModel>(navController)
+                ForgotScreen(onClick = navigationRouter)
             }
         }
     }

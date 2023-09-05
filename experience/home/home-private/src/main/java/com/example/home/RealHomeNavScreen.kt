@@ -21,31 +21,27 @@ class RealHomeNavScreen constructor(
         val navigationRouter: (HomeAction) -> Unit = {
             it.performClick()
         }
-
-        with(this) {
-            navigation(
-                route = NavRoute.Home.route,
-                startDestination = Screen.MainScreen.route
+        navigation(
+            route = NavRoute.Home.route,
+            startDestination = Screen.MainScreen.route
+        ) {
+            composable(route = Screen.MainScreen.route) {
+                MainScreen(onClick = navigationRouter)
+            }
+            composable(
+                route = Screen.DetailScreen.route + "?name={name}", // Nullable
+                arguments = listOf(
+                    navArgument("name") {
+                        type = NavType.StringType
+                        defaultValue = "Pratyesh"
+                        nullable = true
+                    }
+                )
             ) {
-
-                composable(route = Screen.MainScreen.route) {
-                    MainScreen(onClick = navigationRouter)
-                }
-                composable(
-                    route = Screen.DetailScreen.route + "?name={name}", // Nullable
-                    arguments = listOf(
-                        navArgument("name") {
-                            type = NavType.StringType
-                            defaultValue = "Pratyesh"
-                            nullable = true
-                        }
-                    )
-                ) {
-                    DetailsScreen(
-                        args = it.arguments?.getString("name"),
-                        onClick = navigationRouter
-                    )
-                }
+                DetailsScreen(
+                    args = it.arguments?.getString("name"),
+                    onClick = navigationRouter
+                )
             }
         }
     }
