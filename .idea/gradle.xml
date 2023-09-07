@@ -23,10 +23,17 @@
             <option value="$PROJECT_DIR$/experience/home/home-private" />
             <option value="$PROJECT_DIR$/experience/home/home-public" />
             <option value="$PROJECT_DIR$/experience/home/home-wiring" />
+            <option value="$PROJECT_DIR$/gallery-demo" />
+            <option value="$PROJECT_DIR$/home-demo" />
+            <option value="$PROJECT_DIR$/inbox-demo" />
             <option value="$PROJECT_DIR$/lib" />
             <option value="$PROJECT_DIR$/login-demo" />
+            <option value="$PROJECT_DIR$/messaging-demo" />
+            <option value="$PROJECT_DIR$/music-demo" />
+            <option value="$PROJECT_DIR$/settings-demo" />
             <option value="$PROJECT_DIR$/testing-demo" />
             <option value="$PROJECT_DIR$/ui-component" />
+            <option value="$PROJECT_DIR$/video-demo" />
           </set>
         </option>
       </GradleProjectSettings>

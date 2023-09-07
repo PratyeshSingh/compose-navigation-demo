@@ -46,9 +46,21 @@ fun ProjectDescriptor.configureBuildFileName(projectName: String) {
 }
 
 rootProject.name = "compose-navigation-demo"
+
 include(":app")
+
+// Demo Apps Start
 include(":testing-demo")
 include(":login-demo")
+include(":gallery-demo")
+include(":home-demo")
+include(":inbox-demo")
+include(":messaging-demo")
+include(":music-demo")
+include(":settings-demo")
+include(":video-demo")
+
+// Supporting module start
 include(":lib")
 include(":compose-nav")
 include(":app-routes")
