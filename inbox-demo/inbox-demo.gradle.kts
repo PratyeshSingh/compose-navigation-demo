@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "academy.compose.home"
+    namespace = "academy.compose.inbox"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "academy.compose.home"
+        applicationId = "academy.compose.inbox"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
