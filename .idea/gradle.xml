@@ -14,7 +14,6 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/app-routes" />
             <option value="$PROJECT_DIR$/compose-nav" />
-            <option value="$PROJECT_DIR$/demo" />
             <option value="$PROJECT_DIR$/experience" />
             <option value="$PROJECT_DIR$/experience/auth" />
             <option value="$PROJECT_DIR$/experience/auth/auth-private" />
@@ -25,6 +24,9 @@
             <option value="$PROJECT_DIR$/experience/home/home-public" />
             <option value="$PROJECT_DIR$/experience/home/home-wiring" />
             <option value="$PROJECT_DIR$/lib" />
+            <option value="$PROJECT_DIR$/login-demo" />
+            <option value="$PROJECT_DIR$/testing-demo" />
+            <option value="$PROJECT_DIR$/ui-component" />
           </set>
         </option>
       </GradleProjectSettings>

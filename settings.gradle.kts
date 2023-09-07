@@ -47,10 +47,12 @@ fun ProjectDescriptor.configureBuildFileName(projectName: String) {
 
 rootProject.name = "compose-navigation-demo"
 include(":app")
-include(":demo")
+include(":testing-demo")
+include(":login-demo")
 include(":lib")
 include(":compose-nav")
 include(":app-routes")
+include(":ui-component")
 
 include(":experience:home:home-public", "experience/home/home-public")
 include(":experience:home:home-private", "experience/home/home-private")
