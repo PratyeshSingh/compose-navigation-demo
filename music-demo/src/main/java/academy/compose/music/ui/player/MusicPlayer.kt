@@ -64,7 +64,6 @@ fun MusicPlayer(
                 },
                 onClose = {
                     coroutineScope.launch {
-//                        scaffoldState.reveal()
                         scaffoldState.bottomSheetState.show()
                     }
                 }
@@ -86,7 +85,7 @@ fun MusicPlayer(
                         onClickLabel = onClickLabel
                     ) {
                         coroutineScope.launch {
-                            scaffoldState.bottomSheetState.hide()
+                            scaffoldState.bottomSheetState.expand()
                         }
                     }
                     .testTag(TAG_PLAYER_BAR),

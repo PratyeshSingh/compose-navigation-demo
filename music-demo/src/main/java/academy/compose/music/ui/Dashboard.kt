@@ -38,7 +38,7 @@ fun Dashboard(
 
     BottomSheetScaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-        sheetPeekHeight = 115.dp,
+        sheetPeekHeight = 125.dp,
         sheetContainerColor = MaterialTheme.colorScheme.surface,
         scaffoldState = scaffoldState,
         topBar = {
