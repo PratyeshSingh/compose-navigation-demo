@@ -40,6 +40,7 @@ fun EmailInbox(
                 title = {
                     Text(
                         modifier = Modifier.fillMaxWidth(),
+                        color = MaterialTheme.colorScheme.onSurface,
                         text = stringResource(
                             id = R.string.inbox_emails,
                             inboxState.emails?.count() ?: 0),
@@ -47,7 +48,7 @@ fun EmailInbox(
                         fontWeight = FontWeight.Bold
                     )
                 },
-                colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color.DarkGray)
+                colors = TopAppBarDefaults.topAppBarColors(MaterialTheme.colorScheme.onPrimary),
             )
         }
     ) {
