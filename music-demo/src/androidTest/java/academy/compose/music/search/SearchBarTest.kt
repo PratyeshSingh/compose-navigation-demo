@@ -4,7 +4,6 @@ import academy.compose.music.R
 import academy.compose.music.Tags.TAG_SEARCH_BAR
 import academy.compose.music.ui.search.SearchBar
 import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
@@ -15,7 +14,6 @@ import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Rule
 import org.junit.Test
 
-@ExperimentalMaterialApi
 @ExperimentalAnimationApi
 class SearchBarTest {
 

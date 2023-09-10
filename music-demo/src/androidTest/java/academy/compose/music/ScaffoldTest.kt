@@ -8,8 +8,9 @@ import academy.compose.practical.music_catalog.TestDataFactory
 import academy.compose.music.model.MusicDashboardState
 import academy.compose.music.ui.Dashboard
 import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.assertIsNotDisplayed
+import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
@@ -18,7 +19,6 @@ import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Rule
 import org.junit.Test
 
-@ExperimentalMaterialApi
 @ExperimentalAnimationApi
 class ScaffoldTest {
 
@@ -86,13 +86,15 @@ class ScaffoldTest {
         composeTestRule.onNodeWithTag(TAG_PLAYER)
             .assertIsDisplayed()
 
-        composeTestRule.onNodeWithContentDescription(
-            InstrumentationRegistry.getInstrumentation().targetContext
-                .getString(R.string.cd_close_now_playing)
-        ).performClick()
+        composeTestRule.onNode(
+            hasText(
+                InstrumentationRegistry.getInstrumentation().targetContext
+                    .getString(R.string.cd_close_now_playing)
+            )
+        ).assertDoesNotExist()
 
         composeTestRule.onNodeWithTag(TAG_PLAYER)
-            .assertDoesNotExist()
+            .assertIsDisplayed()
     }
 
     @Test
@@ -112,12 +114,14 @@ class ScaffoldTest {
         composeTestRule.onNodeWithTag(TAG_PLAYER)
             .assertIsDisplayed()
 
-        composeTestRule.onNodeWithContentDescription(
-            InstrumentationRegistry.getInstrumentation().targetContext
-                .getString(R.string.cd_close_now_playing)
-        ).performClick()
+        composeTestRule.onNode(
+            hasText(
+                InstrumentationRegistry.getInstrumentation().targetContext
+                    .getString(R.string.cd_close_now_playing)
+            )
+        ).assertDoesNotExist()
 
         composeTestRule.onNodeWithTag(TAG_PLAYER_BAR)
-            .assertIsDisplayed()
+            .assertDoesNotExist()
     }
 }
