@@ -12,7 +12,7 @@ public class SolutionInJava {
         System.out.println("Hello");
 
         ExecutorService service = Executors.newFixedThreadPool(10);
-        // for download image
+////         for download image
 //        List<String> images = new ArrayList<>();
 //        for (String image : images) {
 //            service.execute(new IOTask(image));
@@ -23,27 +23,5 @@ public class SolutionInJava {
 
         service.shutdown();
 
-    }
-}
-
-class NetworkTask implements Runnable {
-
-    @Override
-    public void run() {
-        // do something
-    }
-}
-
-class IOTask implements Runnable {
-
-    private String imageUrl = "";
-
-    IOTask(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    @Override
-    public void run() {
-        // do something
     }
 }
