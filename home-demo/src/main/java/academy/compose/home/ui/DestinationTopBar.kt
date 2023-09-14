@@ -21,9 +21,7 @@ fun DestinationTopBar(
         RootDestinationTopBar(
             modifier = modifier.testTag(TAG_ROOT_TOP_BAR),
             currentDestination = currentDestination,
-            openDrawer = {
-                openDrawer()
-            },
+            openDrawer = openDrawer,
             showSnackbar = { message ->
                 showSnackbar(message)
             }

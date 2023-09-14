@@ -20,6 +20,7 @@ import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
@@ -39,13 +40,20 @@ fun Home(
 
     val navController = rememberNavController()
     val navBackStackEntry = navController.currentBackStackEntryAsState()
-    val currentDestination by derivedStateOf {
-        Destination.fromString(navBackStackEntry.value?.destination?.route)
+    val currentDestination by remember {
+        derivedStateOf {
+            Destination.fromString(navBackStackEntry.value?.destination?.route)
+        }
     }
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val coroutineScope = rememberCoroutineScope()
 
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
+    val openDrawer: () -> Unit = {
+        coroutineScope.launch {
+            drawerState.open()
+        }
+    }
 
     ModalNavigationDrawer(
         modifier = modifier,
@@ -70,14 +78,8 @@ fun Home(
                     DestinationTopBar(
                         modifier = Modifier.fillMaxWidth(),
                         currentDestination = currentDestination,
-                        openDrawer = {
-                            coroutineScope.launch {
-                                drawerState.open()
-                            }
-                        },
-                        onNavigateUp = {
-                            navController.popBackStack()
-                        },
+                        openDrawer = openDrawer,
+                        onNavigateUp = navController::popBackStack,
                         showSnackbar = { message ->
                             coroutineScope.launch {
                                 // Do Actions

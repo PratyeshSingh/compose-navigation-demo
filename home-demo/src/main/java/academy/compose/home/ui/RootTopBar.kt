@@ -33,9 +33,7 @@ fun RootDestinationTopBar(
             Text(text = stringResource(id = R.string.app_name))
         },
         navigationIcon = {
-            IconButton(onClick = {
-                openDrawer()
-            }) {
+            IconButton(onClick = openDrawer) {
                 Icon(
                     imageVector = Icons.Default.Menu,
                     contentDescription = stringResource(

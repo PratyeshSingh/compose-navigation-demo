@@ -33,9 +33,7 @@ fun RailNavigationBar(
         header = {
             FloatingActionButton(
                 modifier = Modifier.testTag(TAG_RAIL_CREATE),
-                onClick = {
-                    onCreateItem()
-                }
+                onClick = onCreateItem
             ) {
                 Icon(
                     imageVector = Icons.Default.Add,
