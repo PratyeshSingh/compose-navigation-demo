@@ -39,6 +39,16 @@ class RealHomeNavScreen constructor(
                         nullable = true
                     }
                 ),
+                /**
+                Step to verify deeplink:-
+                 O/P ==> uriPattern = "example://compose/detail_screen/{name}"
+                 Verify this :-
+                 case1:-
+                 adb shell am start -W -a android.intent.action.VIEW -d "example://compose/detail_screen/'Pratyesh cooming via Deeplink'"
+
+                 case2:-
+                 adb shell am start -W -a android.intent.action.VIEW -d "example://compose/detail_screen/Pratyesh_cooming_via_Deeplink"
+                */
                 deepLinks = listOf(navDeepLink {
                     uriPattern = "example://compose/${Screen.DetailScreen.route}/{name}"
                     action = Intent.ACTION_VIEW

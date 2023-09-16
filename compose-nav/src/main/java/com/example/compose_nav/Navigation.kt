@@ -18,6 +18,12 @@ fun Navigation() {
     NavHost(navController = navController, startDestination = startDestination) {
         composable(
             route = Screen.AboutScreen.route + "/{name}",   // Not Nullable
+            /**
+            Step to verify deeplink:-
+            O/P ==> uriPattern = "example://compose/about_screen/{name}"
+            Verify this :-
+            adb shell am start -W -a android.intent.action.VIEW -d "example://compose/about_screen/'Hi Pratyesh is making Demo app to verify deeplink property'"
+             */
             deepLinks = listOf(navDeepLink {
                 uriPattern = "example://compose/${Screen.AboutScreen.route}/{name}"
                 action = Intent.ACTION_VIEW
