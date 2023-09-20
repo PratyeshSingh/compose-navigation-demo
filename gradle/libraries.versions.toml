@@ -1,7 +1,7 @@
 [versions]
-compileSdk                     = "33"
+compileSdk                     = "34"
 minSdk                         = "24"
-targetSdk                      = "33"
+targetSdk                      = "34"
 androidGradlePluginVersion-experiment = '8.1.0-beta05'
 androidGradlePluginVersion-stable8 = '8.0.2'
 composeCompiler                 = "1.4.3"
