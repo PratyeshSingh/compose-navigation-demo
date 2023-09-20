@@ -1,7 +1,90 @@
 package com.example.compose_navigation_demo
 
 fun main() {
+    sortWeekdays()
+}
+// color // Theme Support/ dark-mode etc
+// loading /// naming
+// swipe refresh
+// View group >> compose optimization >> proper layering of Row/Colum/Box (recomposition check)
+// Preview make
+// MVVM with test coverage
+// repository with test coverage
+// properly function naming
 
+
+fun sortWeekdays(
+    daysString: String = "Wednesday,Friday,Sunday,Monday,Tuesday"
+) {
+    // Define a map to map weekdays to numerical values
+    val weekdayMapping = mapOf(
+        "Sunday" to 1,
+        "Monday" to 2,
+        "Tuesday" to 3,
+        "Wednesday" to 4,
+        "Thursday" to 5,
+        "Friday" to 6,
+        "Saturday" to 7
+    )
+
+    // Split the inputString by a comma (",") delimiter
+    val weekdays = daysString.split(",")
+
+    // Sort the weekdays based on their numerical values
+    val sortedWeekdays = weekdays.sortedBy { weekdayMapping[it] }
+
+    // Print the sorted weekdays
+    println("Sorted weekdays:")
+    sortedWeekdays.forEach { println(it) }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+fun testOld(){
     println("hello")
 
 
@@ -25,9 +108,8 @@ fun main() {
     val letters = words.flatMap { it.toList() }
 
     println(letters)
-
-
 }
+
 data class Person(val id: Int, val name: String)
 
 // write a function to print odd number from 0 to 10

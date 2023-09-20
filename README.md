@@ -2,7 +2,7 @@
 
 
     //Nav controller
-    implementation("androidx.navigation:navigation-compose:2.7.1")
+    implementation(libraries.androidXNavigation)
 
 
 
