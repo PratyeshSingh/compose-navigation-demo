@@ -19,6 +19,7 @@
             <option value="$PROJECT_DIR$/experience/auth/auth-private" />
             <option value="$PROJECT_DIR$/experience/auth/auth-public" />
             <option value="$PROJECT_DIR$/experience/auth/auth-wiring" />
+            <option value="$PROJECT_DIR$/experience/gallery" />
             <option value="$PROJECT_DIR$/experience/home" />
             <option value="$PROJECT_DIR$/experience/home/home-private" />
             <option value="$PROJECT_DIR$/experience/home/home-public" />
@@ -38,6 +39,5 @@
         </option>
       </GradleProjectSettings>
     </option>
-    <option name="offlineMode" value="true" />
   </component>
 </project>

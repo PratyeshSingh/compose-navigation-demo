@@ -50,38 +50,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":experience:gallery"))
 
-    implementation(libraries.androidxCore)
-    implementation(libraries.lifecycleRuntime.ktx)
     implementation(libraries.activityCompose)
-    implementation(platform(libraries.composeBom))
-    implementation(libraries.composeUi)
-    implementation(libraries.composeUiGraphics)
-    implementation(libraries.composeUiToolingPreview)
     implementation(libraries.composeMaterial3)
-    implementation(libraries.materialIconCore)
-
-    implementation(libraries.accompanistPermissions)
-    implementation(libraries.coilCompose)
-    //Nav controller
-    implementation(libraries.androidXNavigation)
-
-
-    implementation(libraries.androidXNavigation)
-    implementation(libraries.coroutinesCore)
-
-    testImplementation(libraries.junit)
-    testImplementation(libraries.coroutinesTest)
-
-
-    androidTestImplementation(libraries.androidxJunit)
-    androidTestImplementation(libraries.espressoCore)
-    androidTestImplementation(platform(libraries.composeBom))
-    androidTestImplementation(libraries.composeUiTestJnit)
-    debugImplementation(libraries.composeUiTooling)
-    debugImplementation(libraries.composeUiTestManifest)
-
-    androidTestImplementation(libraries.mockitoKotlin)
-    androidTestImplementation(libraries.mockitoAndroid)
 
 }

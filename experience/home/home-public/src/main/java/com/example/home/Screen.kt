@@ -2,6 +2,7 @@ package com.example.home
 
 sealed class Screen(val route: String) {
     object MainScreen : Screen("main_screen")
+    object GalleryScreen : Screen("gallery_screen")
     object DetailScreen : Screen("detail_screen")
     object AboutScreen : Screen("about_screen")
 

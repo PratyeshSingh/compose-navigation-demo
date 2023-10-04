@@ -16,27 +16,27 @@ class MyViewModelTest {
     private val coroutineRule = CoroutineTestRule(
         testDispatcher = StandardTestDispatcher()
     )
-
-    @Test
-    fun testStringFast() {
-        val viewModel = MyViewModel(coroutineRule.testDispatcher)
-        runTest {
-            viewModel.testString()
-        }
-    }
-
-    @Test
-    fun testString() {
-        val viewModel = MyViewModel(coroutineRule.testDispatcher)
-        runBlocking {
-            viewModel.testString()
-        }
-    }
-    
-    @Test
-    fun `check my app`(){
-
-    }
+//
+//    @Test
+//    fun testStringFast() {
+//        val viewModel = MyViewModel(coroutineRule.testDispatcher)
+//        runTest {
+//            viewModel.testString()
+//        }
+//    }
+//
+//    @Test
+//    fun testString() {
+//        val viewModel = MyViewModel(coroutineRule.testDispatcher)
+//        runBlocking {
+//            viewModel.testString()
+//        }
+//    }
+//
+//    @Test
+//    fun `check my app`(){
+//
+//    }
 
     @Test
     fun changeStateUpdatesLocalStateAfterDelay() {

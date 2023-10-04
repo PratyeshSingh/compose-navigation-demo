@@ -22,6 +22,7 @@ fun MainScreen(onClick: (HomeAction) -> Unit) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(text = "Main", style = MaterialTheme.typography.headlineLarge)
+        AuthButton("Gallery") { onClick(HomeAction.GALLERY) }
         AuthButton("Details") { onClick(HomeAction.DETAILS) }
         AuthButton("About Us") { onClick(HomeAction.ABOUT) }
     }

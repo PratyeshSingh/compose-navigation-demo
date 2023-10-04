@@ -81,3 +81,4 @@ include(":experience:auth:auth-public", "experience/auth/auth-public")
 include(":experience:auth:auth-private", "experience/auth/auth-private")
 include(":experience:auth:auth-wiring", "experience/auth/auth-wiring")
 
+include(":experience:gallery", "experience/gallery")

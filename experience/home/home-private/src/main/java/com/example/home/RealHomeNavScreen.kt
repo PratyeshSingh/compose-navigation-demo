@@ -1,6 +1,8 @@
 package com.example.home
 
+import academy.compose.gallery.GalleryScreen
 import android.content.Intent
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -19,6 +21,7 @@ class RealHomeNavScreen constructor(
         navGraphBuilder.homeNavScreen()
     }
 
+    @OptIn(ExperimentalFoundationApi::class)
     override fun NavGraphBuilder.homeNavScreen() {
         val navigationRouter: (HomeAction) -> Unit = {
             it.performClick()
@@ -30,6 +33,11 @@ class RealHomeNavScreen constructor(
             composable(route = Screen.MainScreen.route) {
                 MainScreen(onClick = navigationRouter)
             }
+
+            composable(route = Screen.GalleryScreen.route) {
+                GalleryScreen()
+            }
+
             composable(
                 route = Screen.DetailScreen.route + "?name={name}", // Nullable
                 arguments = listOf(
@@ -66,6 +74,9 @@ class RealHomeNavScreen constructor(
         when (this) {
             HomeAction.MAIN ->
                 navController.navigate(Screen.MainScreen.route)
+
+            HomeAction.GALLERY ->
+                navController.navigate(Screen.GalleryScreen.route)
 
             HomeAction.ABOUT ->
                 navController.navigate(Screen.AboutScreen.withArgs("Text args check")) // Not Nullable

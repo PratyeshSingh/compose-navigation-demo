@@ -64,7 +64,7 @@ dependencies {
     implementation(libraries.androidXNavigation)
 
 
-    implementation(libraries.androidXNavigation)
+    implementation(libraries.collectionsImmutable)
     implementation(libraries.coroutinesCore)
 
     testImplementation(libraries.junit)

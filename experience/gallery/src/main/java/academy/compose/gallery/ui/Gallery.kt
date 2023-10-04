@@ -27,6 +27,15 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+/***
+ *
+ * setContent {
+ *             PracticalJetpackComposeTheme {
+ *                 Gallery()
+ *             }
+ *         }
+ * **/
+
 @OptIn(ExperimentalPermissionsApi::class)
 @ExperimentalFoundationApi
 @Composable

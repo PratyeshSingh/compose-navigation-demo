@@ -1,7 +1,63 @@
 package com.example.compose_navigation_demo
 
+import java.text.DateFormat
+import java.util.Date
+import java.util.TimeZone
+import java.util.concurrent.TimeUnit
+
+
+fun calculateDateDifferenceInMillis(date1InMillis: Long, date2InMillis: Long): Long {
+    return date2InMillis - date1InMillis
+}
+
+fun calculateDateDifferenceInDays(date1InMillis: Long, date2InMillis: Long): Long {
+    val differenceInMillis = calculateDateDifferenceInMillis(date1InMillis, date2InMillis)
+    return TimeUnit.MILLISECONDS.toDays(differenceInMillis)
+}
+
+fun calculateDateDifferenceInWeek(daysDifference: Long): String {
+    return when {
+        daysDifference > 365 -> {
+            "12 month ago"
+        }
+
+        daysDifference > 28 -> {
+            "1 month ago"
+        }
+
+        daysDifference > 7 -> {
+            "1 week ago"
+        }
+
+        daysDifference > 5 -> {
+            "5 days ago"
+        }
+
+        daysDifference > 1 -> {
+            "Yesterday"
+        }
+
+        daysDifference == 0L -> {
+            "Today"
+        }
+        else -> "Invalid date"
+    }
+}
+
 fun main() {
-    sortWeekdays()
+
+
+    val date1InMillis: Long = 1519983341000 /* your first date in milliseconds */
+    val date2InMillis: Long = System.currentTimeMillis() /* your second date in milliseconds */
+
+    val daysDifference = calculateDateDifferenceInDays(date1InMillis, date2InMillis)
+//    println("Difference in days: $daysDifference")
+
+    println("Difference ${calculateDateDifferenceInWeek(daysDifference)}")
+
+//    sortWeekdays()
+
+
 }
 // color // Theme Support/ dark-mode etc
 // loading /// naming
@@ -39,52 +95,7 @@ fun sortWeekdays(
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-fun testOld(){
+fun testOld() {
     println("hello")
 
 
@@ -97,7 +108,6 @@ fun testOld(){
     val personMap = dataList.associateBy { it.id }
 
     println(personMap)
-
 
 
     val words = listOf(
@@ -113,33 +123,9 @@ fun testOld(){
 data class Person(val id: Int, val name: String)
 
 // write a function to print odd number from 0 to 10
-fun printLog(){
+fun printLog() {
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //fun main() {
