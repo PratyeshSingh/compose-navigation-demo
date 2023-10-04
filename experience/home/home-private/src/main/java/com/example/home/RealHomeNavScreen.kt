@@ -1,8 +1,15 @@
 package com.example.home
 
 import academy.compose.gallery.GalleryScreen
+import academy.compose.inbox.ui.InboxScreen
+import academy.compose.messaging.ui.Messaging
+import academy.compose.music.ui.MusicCatalog
+import academy.compose.settings.ui.Settings
+import academy.compose.video.ui.Video
 import android.content.Intent
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -21,7 +28,9 @@ class RealHomeNavScreen constructor(
         navGraphBuilder.homeNavScreen()
     }
 
-    @OptIn(ExperimentalFoundationApi::class)
+    @OptIn(ExperimentalFoundationApi::class, ExperimentalAnimationApi::class,
+        ExperimentalComposeUiApi::class
+    )
     override fun NavGraphBuilder.homeNavScreen() {
         val navigationRouter: (HomeAction) -> Unit = {
             it.performClick()
@@ -36,6 +45,26 @@ class RealHomeNavScreen constructor(
 
             composable(route = Screen.GalleryScreen.route) {
                 GalleryScreen()
+            }
+
+            composable(route = Screen.InboxScreen.route) {
+                InboxScreen()
+            }
+
+            composable(route = Screen.MessagingScreen.route) {
+                Messaging()
+            }
+
+            composable(route = Screen.SettingScreen.route) {
+                Settings()
+            }
+
+            composable(route = Screen.VideoScreen.route) {
+                Video(/*lifecycleOwner = this*/)
+            }
+
+            composable(route = Screen.MusicScreen.route) {
+                MusicCatalog()
             }
 
             composable(
@@ -77,6 +106,21 @@ class RealHomeNavScreen constructor(
 
             HomeAction.GALLERY ->
                 navController.navigate(Screen.GalleryScreen.route)
+
+            HomeAction.INBOX ->
+                navController.navigate(Screen.InboxScreen.route)
+
+            HomeAction.MESSAGING ->
+                navController.navigate(Screen.MessagingScreen.route)
+
+            HomeAction.SETTING ->
+                navController.navigate(Screen.SettingScreen.route)
+
+            HomeAction.VIDEOSCREEN ->
+                navController.navigate(Screen.VideoScreen.route)
+
+            HomeAction.MUSIC ->
+                navController.navigate(Screen.MusicScreen.route)
 
             HomeAction.ABOUT ->
                 navController.navigate(Screen.AboutScreen.withArgs("Text args check")) // Not Nullable

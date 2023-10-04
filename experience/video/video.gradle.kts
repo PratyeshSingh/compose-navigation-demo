@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.home"
+    namespace = "academy.compose.video"
     compileSdk = 34
 
     defaultConfig {
@@ -45,17 +45,6 @@ android {
 
 dependencies {
 
-    // project compose nav
-    implementation(project(":app-routes"))
-    implementation(project(":experience:home:home-public"))
-    implementation(project(":experience:gallery"))
-    implementation(project(":experience:inbox"))
-    implementation(project(":experience:messaging"))
-    implementation(project(":experience:settings"))
-    implementation(project(":experience:video"))
-    implementation(project(":experience:music"))
-
-
     implementation(libraries.androidxCore)
     implementation(libraries.lifecycleRuntime.ktx)
     implementation(libraries.activityCompose)
@@ -64,6 +53,11 @@ dependencies {
     implementation(libraries.composeUiGraphics)
     implementation(libraries.composeUiToolingPreview)
     implementation(libraries.composeMaterial3)
+    implementation(libraries.materialIconCore)
+
+
+    implementation(libraries.exoplayerCore)
+    implementation(libraries.exoplayerUi)
 
     //Nav controller
     implementation(libraries.androidXNavigation)
@@ -82,4 +76,8 @@ dependencies {
     androidTestImplementation(libraries.composeUiTestJnit)
     debugImplementation(libraries.composeUiTooling)
     debugImplementation(libraries.composeUiTestManifest)
+
+    androidTestImplementation(libraries.mockitoKotlin)
+    androidTestImplementation(libraries.mockitoAndroid)
+
 }
