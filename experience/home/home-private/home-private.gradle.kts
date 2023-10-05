@@ -82,4 +82,8 @@ dependencies {
     androidTestImplementation(libraries.composeUiTestJnit)
     debugImplementation(libraries.composeUiTooling)
     debugImplementation(libraries.composeUiTestManifest)
+
+
+    androidTestImplementation(libraries.mockitoKotlin)
+    androidTestImplementation(libraries.mockitoAndroid)
 }

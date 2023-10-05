@@ -58,9 +58,8 @@ include(":app")
 
 // Demo Apps Start
 include(":testing-demo")
-include(":login-demo")
+include(":demo:login-demo", "demo/login-demo")
 include(":demo:gallery-demo", "demo/gallery-demo")
-include(":home-demo")
 include(":demo:inbox-demo", "demo/inbox-demo")
 include(":demo:messaging-demo", "demo/messaging-demo")
 include(":demo:music-demo", "demo/music-demo")

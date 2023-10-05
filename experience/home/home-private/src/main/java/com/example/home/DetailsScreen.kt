@@ -20,6 +20,6 @@ fun DetailsScreen(args: String?, onClick: (HomeAction) -> Unit) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(text = "Details \n$args", style = MaterialTheme.typography.headlineLarge)
-        AuthButton("About Us") { onClick(HomeAction.ABOUT) }
+        ActionButton("About Us") { onClick(HomeAction.ABOUT) }
     }
 }
