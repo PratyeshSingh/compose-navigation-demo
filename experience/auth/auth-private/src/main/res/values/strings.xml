@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_sign_in">Sign In to your account</string>
+    <string name="title_sign_up">Sign Up for an account</string>
+
+    <string name="label_email_address">Email Address</string>
+    <string name="label_password">Password</string>
+    <string name="cd_show_password">Show Password</string>
+    <string name="cd_hide_password">Hide Password</string>
+
+    <string name="password_requirement_satisfied">%s, satisfied</string>
+    <string name="password_requirement_needed">%s, needed</string>
+
+    <string name="requirement_characters">At least 8 characters</string>
+    <string name="requirement_capital">At least 1 upper-case letter</string>
+    <string name="requirement_digit">At least 1 digit</string>
+
+    <string name="action_sign_up">Sign Up</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="action_forgot">Forgot</string>
+
+    <string name="action_need_account">Need an account?</string>
+    <string name="action_already_have_account">Already have an account?</string>
+
+    <string name="error_title">Whoops</string>
+    <string name="error_action">OK</string>
+</resources>

@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/demo" />
             <option value="$PROJECT_DIR$/demo/gallery-demo" />
             <option value="$PROJECT_DIR$/demo/inbox-demo" />
+            <option value="$PROJECT_DIR$/demo/login-demo" />
             <option value="$PROJECT_DIR$/demo/messaging-demo" />
             <option value="$PROJECT_DIR$/demo/music-demo" />
             <option value="$PROJECT_DIR$/demo/settings-demo" />
@@ -38,7 +39,6 @@
             <option value="$PROJECT_DIR$/experience/video" />
             <option value="$PROJECT_DIR$/home-demo" />
             <option value="$PROJECT_DIR$/lib" />
-            <option value="$PROJECT_DIR$/login-demo" />
             <option value="$PROJECT_DIR$/testing-demo" />
             <option value="$PROJECT_DIR$/ui-component" />
           </set>

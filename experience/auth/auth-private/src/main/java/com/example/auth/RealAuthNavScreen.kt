@@ -24,16 +24,12 @@ class RealAuthNavScreen(
             route = NavRoute.AuthScreen.route,
             startDestination = AuthScreen.LoginScreen.route
         ) {
-            composable(route = AuthScreen.RegisterScreen.route) {
-                val viewModel = it.sharedViewModel<SampleViewModel>(navController)
-                RegistrationScreen(onClick = navigationRouter)
-            }
             composable(route = AuthScreen.LoginScreen.route) {
-                val viewModel = it.sharedViewModel<SampleViewModel>(navController)
+                val viewModel = it.sharedViewModel<AuthenticationViewModel>(navController)
                 LoginScreen(onClick = navigationRouter)
             }
             composable(route = AuthScreen.ForgotScreen.route) {
-                val viewModel = it.sharedViewModel<SampleViewModel>(navController)
+                val viewModel = it.sharedViewModel<AuthenticationViewModel>(navController)
                 ForgotScreen(onClick = navigationRouter)
             }
         }
@@ -43,10 +39,6 @@ class RealAuthNavScreen(
         when (this) {
             AuthAction.LOGIN -> {
                 navController.navigate(AuthScreen.LoginScreen.route)
-            }
-
-            AuthAction.REGISTER -> {
-                navController.navigate(AuthScreen.RegisterScreen.route)
             }
 
             AuthAction.FORGOT -> {

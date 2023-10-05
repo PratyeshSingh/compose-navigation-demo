@@ -57,6 +57,7 @@ dependencies {
     implementation(libraries.composeUiGraphics)
     implementation(libraries.composeUiToolingPreview)
     implementation(libraries.composeMaterial3)
+    implementation(libraries.materialIconCore)
 
     //Nav controller
     implementation(libraries.androidXNavigation)
@@ -75,4 +76,8 @@ dependencies {
     androidTestImplementation(libraries.composeUiTestJnit)
     debugImplementation(libraries.composeUiTooling)
     debugImplementation(libraries.composeUiTestManifest)
+
+    androidTestImplementation(libraries.mockitoKotlin)
+    androidTestImplementation(libraries.mockitoAndroid)
+
 }
