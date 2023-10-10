@@ -53,6 +53,7 @@ dependencies {
     implementation(libraries.composeUiGraphics)
     implementation(libraries.composeUiToolingPreview)
     implementation(libraries.composeMaterial3)
+    implementation(libraries.materialIconExtend)
     implementation(libraries.materialIconCore)
 
 
@@ -65,6 +66,14 @@ dependencies {
 
     implementation(libraries.androidXNavigation)
     implementation(libraries.coroutinesCore)
+
+    implementation(libraries.camera.core)
+    implementation(libraries.camera.camera2)
+    implementation(libraries.camera.lifecycle)
+    implementation(libraries.camera.video)
+    implementation(libraries.camera.view)
+    implementation(libraries.camera.extensions)
+
 
     testImplementation(libraries.junit)
     testImplementation(libraries.coroutinesTest)
