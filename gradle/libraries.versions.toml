@@ -8,14 +8,13 @@ composeCompiler                 = "1.4.3"
 kotlinxCoroutinesCore           = '1.6.2'
 mockitoKotlin                   = '3.2.0'
 mockitoAndroid                  = '3.12.4'
-materialIconCore                = '1.5.1'
-
+materialIconCore                = '1.5.2'
+cameraxVersion                  = '1.3.0-rc01'
 
 #[plugins]
 #kspPlugin              = { id = "com.google.devtools.ksp", version.ref = "kspVersion" }
 #protocolBufferPlugin   = { id = "com.google.protobuf", version.ref = "protocolBufferPluginVersion" }
 #paparazziPlugin        = { id = "dev.chrisbanes.paparazzi", version.ref = "paparazzi"}
-
 
 [libraries]
 composeBom             = "androidx.compose:compose-bom:2023.03.00"
@@ -26,8 +25,9 @@ androidxCore           = "androidx.core:core-ktx:1.9.0"
 composeUi              = { module = "androidx.compose.ui:ui", version.ref = "composeCompiler" }
 composeUiGraphics      = { module = "androidx.compose.ui:ui-graphics" }
 composeUiToolingPreview= { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "composeCompiler" }
-composeMaterial3       = "androidx.compose.material3:material3:1.1.1"
+composeMaterial3       = "androidx.compose.material3:material3:1.1.2"
 materialIconCore       = { module = "androidx.compose.material:material-icons-core", version.ref = "materialIconCore"}
+materialIconExtend     = { module = "androidx.compose.material:material-icons-extended", version.ref = "materialIconCore"}
 collectionsImmutable   = "org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5"
 coroutinesCore         = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
 
@@ -41,7 +41,21 @@ composeUiTestManifest  = { module = "androidx.compose.ui:ui-test-manifest" }
 composeUiTooling       = { module = "androidx.compose.ui:ui-tooling" }
 mockitoKotlin          = { module = "org.mockito.kotlin:mockito-kotlin" , version.ref = "mockitoKotlin" }
 mockitoAndroid         = { module = "org.mockito:mockito-android" , version.ref = "mockitoAndroid" }
+
+# Image loading sdk
 coilCompose            = "io.coil-kt:coil-compose:1.4.0"
+
+# For runtiime permission
 accompanistPermissions = "com.google.accompanist:accompanist-permissions:0.22.1-rc"
+
+# Video player sdk
 exoplayerCore          = "com.google.android.exoplayer:exoplayer-core:2.15.1"
 exoplayerUi            = "com.google.android.exoplayer:exoplayer-ui:2.15.1"
+
+# Camera Sdk to capture image & video
+camera-core              = { module = "androidx.camera:camera-core", version.ref = "cameraxVersion" }
+camera-camera2           = { module = "androidx.camera:camera-camera2", version.ref = "cameraxVersion" }
+camera-lifecycle         = { module = "androidx.camera:camera-lifecycle", version.ref = "cameraxVersion" }
+camera-video              = { module = "androidx.camera:camera-video", version.ref = "cameraxVersion" }
+camera-view              = { module = "androidx.camera:camera-view", version.ref = "cameraxVersion" }
+camera-extensions        = { module = "androidx.camera:camera-extensions", version.ref = "cameraxVersion" }
