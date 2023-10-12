@@ -19,6 +19,7 @@ import androidx.compose.material3.TextField
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -52,16 +53,20 @@ fun PasswordInput(
         },
         trailingIcon = {
             Icon(
-                modifier = Modifier.clickable(
-                    onClickLabel = if (isPasswordHidden) {
-                        stringResource(id = R.string.cd_show_password)
-                    } else stringResource(id = R.string.cd_hide_password)
-                ) {
-                    isPasswordHidden = !isPasswordHidden
-                }.testTag(TAG_PASSWORD_TOGGLE + isPasswordHidden),
-                imageVector = if (isPasswordHidden) {
-                    Icons.Default.Lock
-                } else Icons.Default.Home,
+                modifier = Modifier
+                    .clickable(
+                        onClickLabel = if (isPasswordHidden) {
+                            stringResource(id = R.string.cd_show_password)
+                        } else stringResource(id = R.string.cd_hide_password)
+                    ) {
+                        isPasswordHidden = !isPasswordHidden
+                    }
+                    .testTag(TAG_PASSWORD_TOGGLE + isPasswordHidden),
+                painter = painterResource(
+                    id = if (isPasswordHidden) {
+                        R.drawable.eye_hide
+                    } else R.drawable.eye_show
+                ),
                 contentDescription = null
             )
         },
