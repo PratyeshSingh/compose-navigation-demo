@@ -81,6 +81,8 @@ fun AuthenticationForm(
                 Spacer(modifier = Modifier.height(12.dp))
                 GenderInput(modifier = Modifier)
                 Spacer(modifier = Modifier.height(12.dp))
+                DateOfBirthInput(modifier = Modifier)
+                Spacer(modifier = Modifier.height(12.dp))
                 AuthenticationButton(
                     authenticationMode = authenticationMode,
                     enableAuthentication = enableAuthentication,

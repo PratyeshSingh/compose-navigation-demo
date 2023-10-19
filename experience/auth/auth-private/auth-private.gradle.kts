@@ -44,6 +44,7 @@ android {
 }
 
 dependencies {
+    implementation("io.github.vanpra.compose-material-dialogs:datetime:0.8.1-rc")
     //Nav controller
     implementation(project(":app-routes"))
     implementation(project(":experience:auth:auth-public"))
