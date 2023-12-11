@@ -29,7 +29,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.home.HomeAction
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -37,7 +36,6 @@ import kotlinx.coroutines.launch
 fun Home(
     modifier: Modifier = Modifier,
     orientation: Int,
-    onClick: (HomeAction) -> Unit
 ) {
 
     val navController = rememberNavController()
@@ -70,8 +68,7 @@ fun Home(
                 },
                 onLogout = {
                     // handle logout
-                },
-                onClick = onClick
+                }
             )
         },
         content = {
@@ -152,6 +149,6 @@ fun Home(
 @Composable
 fun Preview_Home() {
     MaterialTheme {
-        Home(modifier = Modifier.fillMaxSize(), orientation = Configuration.ORIENTATION_LANDSCAPE, onClick = {})
+        Home(modifier = Modifier.fillMaxSize(), orientation = Configuration.ORIENTATION_LANDSCAPE)
     }
 }

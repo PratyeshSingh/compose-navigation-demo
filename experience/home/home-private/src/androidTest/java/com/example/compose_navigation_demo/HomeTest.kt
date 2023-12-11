@@ -26,7 +26,7 @@ class HomeTest {
     @Test
     fun Navigation_Rail_No_Displayed_In_Portrait() {
         composeTestRule.setContent {
-            com.example.home.ui.Home(orientation = Configuration.ORIENTATION_PORTRAIT, onClick = {})
+            com.example.home.ui.Home(orientation = Configuration.ORIENTATION_PORTRAIT)
         }
         composeTestRule.onNodeWithTag(TAG_RAIL_NAVIGATION)
             .assertDoesNotExist()
@@ -35,7 +35,7 @@ class HomeTest {
     @Test
     fun Navigation_Rail_Not_Displayed_For_Non_Root_Destination() {
         composeTestRule.setContent {
-            com.example.home.ui.Home(orientation = Configuration.ORIENTATION_PORTRAIT, onClick = {})
+            com.example.home.ui.Home(orientation = Configuration.ORIENTATION_PORTRAIT)
         }
 
         composeTestRule.onNodeWithContentDescription(
@@ -50,7 +50,7 @@ class HomeTest {
     @Test
     fun Navigation_Rail_Not_Displayed_For_Non_Root_Destination_In_Landscape() {
         composeTestRule.setContent {
-            com.example.home.ui.Home(orientation = Configuration.ORIENTATION_LANDSCAPE, onClick = {})
+            com.example.home.ui.Home(orientation = Configuration.ORIENTATION_LANDSCAPE)
         }
 
         composeTestRule.onNodeWithTag(
@@ -64,7 +64,7 @@ class HomeTest {
     @Test
     fun Navigation_Rail_Displayed_In_Landscape() {
         composeTestRule.setContent {
-            com.example.home.ui.Home(orientation = Configuration.ORIENTATION_LANDSCAPE, onClick = {})
+            com.example.home.ui.Home(orientation = Configuration.ORIENTATION_LANDSCAPE)
         }
         composeTestRule.onNodeWithTag(TAG_RAIL_NAVIGATION)
             .assertIsDisplayed()
@@ -75,7 +75,7 @@ class HomeTest {
     @Test
     fun Bottom_Navigation_Displayed_In_Portrait() {
         composeTestRule.setContent {
-            com.example.home.ui.Home(orientation = Configuration.ORIENTATION_PORTRAIT, onClick = {})
+            com.example.home.ui.Home(orientation = Configuration.ORIENTATION_PORTRAIT)
         }
         composeTestRule.onNodeWithTag(TAG_BOTTOM_NAVIGATION)
             .assertIsDisplayed()
@@ -84,7 +84,7 @@ class HomeTest {
     @Test
     fun Bottom_Navigation_Not_Displayed_In_Landscape() {
         composeTestRule.setContent {
-            com.example.home.ui.Home(orientation = Configuration.ORIENTATION_LANDSCAPE, onClick = {})
+            com.example.home.ui.Home(orientation = Configuration.ORIENTATION_LANDSCAPE)
         }
         composeTestRule.onNodeWithTag(TAG_BOTTOM_NAVIGATION)
             .assertDoesNotExist()
@@ -93,7 +93,7 @@ class HomeTest {
     @Test
     fun Bottom_Navigation_Not_Displayed_For_Non_Root_Destination() {
         composeTestRule.setContent {
-            com.example.home.ui.Home(orientation = Configuration.ORIENTATION_LANDSCAPE, onClick = {})
+            com.example.home.ui.Home(orientation = Configuration.ORIENTATION_LANDSCAPE)
         }
 
         composeTestRule.onNodeWithTag(
@@ -107,7 +107,7 @@ class HomeTest {
     @Test
     fun Bottom_Navigtion_Not_Displayed_For_Non_Root_Destination_In_Portrait() {
         composeTestRule.setContent {
-            com.example.home.ui.Home(orientation = Configuration.ORIENTATION_PORTRAIT, onClick = {})
+            com.example.home.ui.Home(orientation = Configuration.ORIENTATION_PORTRAIT)
         }
 
         composeTestRule.onNodeWithContentDescription(

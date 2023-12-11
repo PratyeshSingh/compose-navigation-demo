@@ -9,10 +9,9 @@ import com.example.home.ui.Home
 
 
 @Composable
-fun MainScreen(onClick: (HomeAction) -> Unit) {
+fun MainScreen() {
     Home(
         modifier = Modifier.fillMaxSize(),
         orientation = LocalConfiguration.current.orientation,
-        onClick = onClick
     )
 }

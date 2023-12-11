@@ -50,6 +50,7 @@ fun main() {
     for (perm in permutations) {
         println(perm.joinToString(", "))
     }
+
 }
 
 fun swap(input: IntArray, i: Int, j: Int) {
@@ -57,4 +58,3 @@ fun swap(input: IntArray, i: Int, j: Int) {
     input[i] = input[j]
     input[j] = temp
 }
-

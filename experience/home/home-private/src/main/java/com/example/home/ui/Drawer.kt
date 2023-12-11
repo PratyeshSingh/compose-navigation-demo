@@ -14,15 +14,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.home.FeatureList
-import com.example.home.HomeAction
 import com.example.home.R
 
 @Composable
 fun DrawerContent(
     onNavigate: (destination: Destination) -> Unit,
-    onLogout: () -> Unit,
-    onClick: (HomeAction) -> Unit
+    onLogout: () -> Unit
 ) {
     Column(modifier = Modifier
         .width(240.dp)
@@ -59,8 +56,6 @@ fun DrawerContent(
                 onNavigate(Destination.Settings)
             }
         )
-
-        FeatureList(onClick = onClick)
 
         Spacer(modifier = Modifier.weight(1f))
 
@@ -101,7 +96,6 @@ fun Preview_DrawerContent() {
             DrawerContent(
                 onNavigate = { },
                 onLogout = { },
-                onClick = { }
             )
         }
     }
