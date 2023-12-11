@@ -1,5 +1,3 @@
-
-
 package com.example.auth.ui
 
 import com.example.auth.model.AuthenticationEvent
@@ -63,7 +61,7 @@ fun AuthenticationContent(
                     }
                 )
             }
-            LaunchedEffect(Unit){
+            LaunchedEffect(Unit) {
                 if (state.isFormValid() && state.error.isNullOrEmpty()) {
                     onDone(AuthAction.SUBMIT)
                 }

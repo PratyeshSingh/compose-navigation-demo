@@ -1,5 +1,6 @@
 package com.example.compose_navigation_demo
 
+import android.net.LocalSocketAddress.Namespace
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
@@ -20,14 +21,28 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.example.compose_navigation_demo.ui.theme.ComposenavigationdemoTheme
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
-class DemoActivity : ComponentActivity() {
+class DemoActivity : ComponentActivity(),
+    NamespacedComponent by ProvideNamespace(LoggingNamespace.DemoActivity)
+{
 
     private val mMyViewModel by viewModels<MyViewModel>()
 //    private val updateItem = mutableStateOf(false)
+
+
+    val tempViewModel : FlowOperatorViewModel by viewModels()
+    val coldToHotFlowViewModel : ColdToHotFlowViewModel by viewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +62,8 @@ class DemoActivity : ComponentActivity() {
                     val updateItem = mMyViewModel.localState.collectAsState()
                     HomeScreen(
                         listener = ::proceed,
-                        contentList = contentList.toImmutableList(),
+//                        contentList = contentList.toImmutableList(),
+                        contentList = coldToHotFlowViewModel.newsState.collectAsState(initial = contentList).value.toImmutableList(),
                         updateItem = updateItem.value
                     )
                 }
@@ -59,6 +75,19 @@ class DemoActivity : ComponentActivity() {
 //                updateItem.value = it
 //            }
 //        }
+
+//        tempViewModel.check()
+//        collectLatestLivecycleFlow(tempViewModel.countDownFlow) {
+//            Log.d("DemoActivity:: onCreate", "$it")
+//        }
+
+//        lifecycleScope.launch {
+//            coldToHotFlowViewModel.newsState.collect {
+//                Log.d("DemoActivity:: newsState", "$it")
+//            }
+//        }
+
+        coldToHotFlowViewModel.listOFSuper()
     }
 
     private fun proceed(action: HomeAction) {
@@ -123,5 +152,14 @@ fun DefaultPreview() {
             name = "Android",
             listener = {}
         )
+    }
+}
+
+
+fun <T> DemoActivity.collectLatestLivecycleFlow(flow: Flow<T>, collect: suspend (T) -> Unit) {
+    lifecycleScope.launch {
+        repeatOnLifecycle(Lifecycle.State.STARTED){
+            flow.collectLatest(collect)
+        }
     }
 }

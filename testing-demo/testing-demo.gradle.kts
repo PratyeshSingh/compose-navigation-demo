@@ -66,6 +66,8 @@ dependencies {
 
     implementation(libraries.collectionsImmutable)
     implementation(libraries.coroutinesCore)
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+    implementation("androidx.lifecycle:lifecycle-process:2.6.2")
 
     testImplementation(libraries.junit)
     testImplementation(libraries.coroutinesTest)
@@ -77,4 +79,7 @@ dependencies {
     androidTestImplementation(libraries.composeUiTestJnit)
     debugImplementation(libraries.composeUiTooling)
     debugImplementation(libraries.composeUiTestManifest)
+
+    testImplementation("app.cash.turbine:turbine:0.7.0")
+    testImplementation("com.google.truth:truth:1.1.3")
 }

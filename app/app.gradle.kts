@@ -55,6 +55,12 @@ dependencies {
 // project compose nav
     implementation(project(":compose-nav"))
     implementation(project(":experience:home:home-public"))
+    implementation(project(":experience:gallery"))
+    implementation(project(":experience:inbox"))
+    implementation(project(":experience:messaging"))
+    implementation(project(":experience:settings"))
+    implementation(project(":experience:video"))
+    implementation(project(":experience:music"))
 
     implementation(libraries.androidxCore)
     implementation(libraries.lifecycleRuntime.ktx)

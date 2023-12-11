@@ -28,7 +28,6 @@ class DrawerContentTest {
                 com.example.home.ui.DrawerContent(
                     onNavigate = {},
                     onLogout = {},
-                    onClick = {}
                 )
             }
         }
@@ -51,7 +50,6 @@ class DrawerContentTest {
                 com.example.home.ui.DrawerContent(
                     onNavigate = {},
                     onLogout = {},
-                    onClick = {}
                 )
             }
         }
@@ -69,7 +67,6 @@ class DrawerContentTest {
                 com.example.home.ui.DrawerContent(
                     onNavigate = onNavigate,
                     onLogout = {},
-                    onClick = {}
                 )
             }
         }
@@ -89,7 +86,6 @@ class DrawerContentTest {
                 com.example.home.ui.DrawerContent(
                     onNavigate = {},
                     onLogout = {},
-                    onClick = {}
                 )
             }
         }
@@ -107,7 +103,6 @@ class DrawerContentTest {
                 com.example.home.ui.DrawerContent(
                     onNavigate = onNavigate,
                     onLogout = {},
-                    onClick = {}
                 )
             }
         }
@@ -127,7 +122,6 @@ class DrawerContentTest {
                 com.example.home.ui.DrawerContent(
                     onNavigate = {},
                     onLogout = {},
-                    onClick = {}
                 )
             }
         }
@@ -146,7 +140,6 @@ class DrawerContentTest {
                 com.example.home.ui.DrawerContent(
                     onNavigate = {},
                     onLogout = onLogout,
-                    onClick = {}
                 )
             }
         }

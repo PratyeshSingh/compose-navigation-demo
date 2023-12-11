@@ -1,17 +1,15 @@
+package com.example.compose_navigation_demo
 
-
-package academy.compose.authentication
-
-import com.example.auth.ui.Authentication
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import com.example.compose_navigation_demo.component.features.FeatureNavigation
 
-class AuthenticationActivity : ComponentActivity() {
+class FeatureDemoActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Authentication( {})
+            FeatureNavigation()
         }
     }
 }

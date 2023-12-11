@@ -1,4 +1,4 @@
-package com.example.home
+package com.example.compose_navigation_demo.component.features
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

@@ -5,7 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import com.example.compose_nav.NavRoute
-import com.example.home.Screen
+import com.example.home.HomeMainScreen
 
 class RealAuthNavScreen(
     navGraphBuilder: NavGraphBuilder,
@@ -46,7 +46,7 @@ class RealAuthNavScreen(
             }
 
             AuthAction.SUBMIT -> {
-                navController.navigate(Screen.MainScreen.route) {
+                navController.navigate(HomeMainScreen.MainScreen.route) {
                     popUpTo(NavRoute.AuthScreen.route) {
                         inclusive = true
                     }

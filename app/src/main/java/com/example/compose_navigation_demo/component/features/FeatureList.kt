@@ -1,8 +1,7 @@
-package com.example.home
+package com.example.compose_navigation_demo.component.features
 
 import academy.compose.video.ui.recorder.RecorderActivity
 import android.content.Intent
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,7 +19,7 @@ fun FeatureList(onClick: (HomeAction) -> Unit) {
     val context = LocalContext.current
     Column(
         modifier = Modifier
-            .fillMaxWidth(),
+            .fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
