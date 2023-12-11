@@ -26,7 +26,7 @@ fun Navigation(
             route = Destination.Home.path,
         ) {
             composable(Destination.Feed.path) {
-                ContentArea(
+                FeedContent(
                     modifier = Modifier.fillMaxSize(),
                     destination = Destination.Feed
                 )
