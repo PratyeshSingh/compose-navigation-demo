@@ -37,10 +37,10 @@ fun FeatureNavigation() {
             Step to verify deeplink:-
             O/P ==> uriPattern = "example://compose/about_screen/{name}"
             Verify this :-
-            adb shell am start -W -a android.intent.action.VIEW -d "example://compose/about_screen/'Hi Pratyesh is making Demo app to verify deeplink property'"
+            adb shell am start -W -a android.intent.action.VIEW -d "example://about_screen/'Hi Pratyesh is making Demo app to verify deeplink property'"
              */
             deepLinks = listOf(navDeepLink {
-                uriPattern = "example://compose/${Screen.AboutScreen.route}/{name}"
+                uriPattern = "example://${Screen.AboutScreen.route}/{name}"
                 action = Intent.ACTION_VIEW
             })
         ) {
@@ -89,13 +89,13 @@ fun FeatureNavigation() {
             O/P ==> uriPattern = "example://compose/detail_screen/{name}"
             Verify this :-
             case1:-
-            adb shell am start -W -a android.intent.action.VIEW -d "example://compose/detail_screen/'Pratyesh cooming via Deeplink'"
+            adb shell am start -W -a android.intent.action.VIEW -d "example://detail_screen/'Pratyesh cooming via Deeplink'"
 
             case2:-
-            adb shell am start -W -a android.intent.action.VIEW -d "example://compose/detail_screen/Pratyesh_cooming_via_Deeplink"
+            adb shell am start -W -a android.intent.action.VIEW -d "example://detail_screen/Pratyesh_cooming_via_Deeplink"
              */
             deepLinks = listOf(navDeepLink {
-                uriPattern = "example://compose/${FeaturesScreen.DetailScreen.route}/{name}"
+                uriPattern = "example://${FeaturesScreen.DetailScreen.route}/{name}"
                 action = Intent.ACTION_VIEW
             })
         ) {

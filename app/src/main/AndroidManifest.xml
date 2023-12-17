@@ -20,12 +20,42 @@
         <activity
             android:name=".HomeBottomNavActivity"
             android:exported="true"
-            android:theme="@style/Theme.Composenavigationdemo"/>
+            android:theme="@style/Theme.Composenavigationdemo">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="example" />
+                <data android:host="home" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".FeatureDemoActivity"
             android:exported="true"
-            android:theme="@style/Theme.Composenavigationdemo"/>
+            android:theme="@style/Theme.Composenavigationdemo">
+
+            <!-- Deep link filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="example" />
+
+                <!--
+                We have to specify these explicitly, as the auth handling
+                activity needs to handle target://auth and we don't want
+                those intents to be treated as deep links.
+                -->
+                <data android:host="about_screen" />
+                <data android:host="detail_screen"/>
+
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".ComposeDemoActivity"
