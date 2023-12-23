@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flatMapMerge
 import kotlinx.coroutines.flow.flow
@@ -43,18 +44,18 @@ class FlowOperatorViewModel : ViewModel() {
 
             // case :: Collect all value from begin for each it's subscribers
 
-//            countDownFlow.collect { time ->
-//                delay(1500L)
-//                println("The Current value is $time")
-//            }
+            countDownFlow.collect { time ->
+                delay(1500L)
+                println("The Current value is $time")
+            }
 
 
             // case :: Collect latest value and skip/drop the older value
 
-//            countDownFlow.collectLatest { time ->
-//                delay(1500L)
-//                println("The Current value is $time")
-//            }
+            countDownFlow.collectLatest { time ->
+                delay(1500L)
+                println("The Current value is $time")
+            }
 
 
 
@@ -79,7 +80,7 @@ class FlowOperatorViewModel : ViewModel() {
 //            }
 
 
-            // case :: MERGE trigger any flow emit then `merge` execute
+            // case :: MERGE trigger any flow emit then `merge` execute , But provide the instance of triggered flow only
 //            val temp = flow<Int> { emit(100) }
 //            var outputString = StringBuilder()
 //            merge(countDownFlow, temp).let {

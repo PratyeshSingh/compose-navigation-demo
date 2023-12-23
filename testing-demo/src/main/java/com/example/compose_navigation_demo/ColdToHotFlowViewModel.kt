@@ -107,6 +107,12 @@ class NewsRemoteDataSource(
                 initialValue = null
             )
 
+//            latestNews.shareIn(
+//                externalScope,
+//                replay = 1,
+//                started = SharingStarted.WhileSubscribed(),
+//            )
+
             testme()
         }
     }
