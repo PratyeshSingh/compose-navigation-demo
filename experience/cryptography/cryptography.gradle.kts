@@ -1,25 +1,18 @@
-import org.jetbrains.kotlin.gradle.plugin.extraProperties
-
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 android {
-    namespace = "com.example.compose_navigation_demo"
-    compileSdk = libraries.versions.compileSdk.get().toInt()
+    namespace = "com.cryptography"
+    compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.compose_navigation_demo"
-        minSdk = libraries.versions.minSdk.get().toInt()
-        targetSdk = libraries.versions.targetSdk.get().toInt()
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = 24
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -52,16 +45,13 @@ android {
 }
 
 dependencies {
-// project compose nav
-    implementation(project(":compose-nav"))
+
+    // project compose nav
+    implementation(project(":app-routes"))
     implementation(project(":experience:home:home-public"))
-    implementation(project(":experience:gallery"))
-    implementation(project(":experience:inbox"))
-    implementation(project(":experience:messaging"))
-    implementation(project(":experience:settings"))
-    implementation(project(":experience:video"))
-    implementation(project(":experience:music"))
-    implementation(project(":experience:cryptography"))
+
+    implementation(libraries.datastore.preferences)
+    implementation(libraries.kotlinx.serialization.json)
 
     implementation(libraries.androidxCore)
     implementation(libraries.lifecycleRuntime.ktx)
@@ -76,7 +66,7 @@ dependencies {
     implementation(libraries.androidXNavigation)
 
 
-    implementation (libraries.collectionsImmutable)
+    implementation(libraries.androidXNavigation)
     implementation(libraries.coroutinesCore)
 
     testImplementation(libraries.junit)
@@ -89,4 +79,8 @@ dependencies {
     androidTestImplementation(libraries.composeUiTestJnit)
     debugImplementation(libraries.composeUiTooling)
     debugImplementation(libraries.composeUiTestManifest)
+
+
+    androidTestImplementation(libraries.mockitoKotlin)
+    androidTestImplementation(libraries.mockitoAndroid)
 }
