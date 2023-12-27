@@ -81,3 +81,30 @@ infix operator fun MyTest.plus(b: MyTest): MyTest {
         isEnable = mEnable
     }
 }
+
+/*
+
+class MockTestValidation {
+    private val mockObject = mock(MyObject::class.java)
+    private val classUnderTest = ClassToTest()
+
+    @Before
+    fun setup() {
+        Mockito.reset(mockObject)
+    }
+
+    @Test
+    fun classFunctionTest() {
+        val inputTest = "Input text"
+        classUnderTest.finalFunction(inputTest, mockObject)
+        verify(mockObject, atMost(1)).doObjectAction(inputTest)
+    }
+}
+
+class ClassToTest {
+    fun classFunction(message: String, objectX: MyObject) {
+        objectX.doObjectAction(message)
+    }
+}
+
+ */

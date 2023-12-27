@@ -73,6 +73,6 @@ class CoroutineTestRule(
 }
 
 @OptIn(ExperimentalCoroutinesApi::class)
-fun TestDispatcher.runTest(block: suspend TestScope.()->Unit){
+fun TestDispatcher.runTest(block: suspend TestScope.() -> Unit) {
     runTest(context = this, dispatchTimeoutMs = 1_000L, testBody = block)
 }

@@ -1,5 +1,6 @@
 package com.example.compose_navigation_demo
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,20 +12,20 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Divider
 import androidx.compose.material3.Text
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.cryptography.datastore.DataStoreCryptographyActivity
+import com.cryptography.string.StringCryptographyActivity
 
-class ComposeDemoActivity : ComponentActivity() {
+class CryptographyActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-
             Column(modifier = Modifier
                 .fillMaxSize()
                 .background(Color.White),
@@ -35,9 +36,9 @@ class ComposeDemoActivity : ComponentActivity() {
                     modifier = Modifier
                         .padding(horizontal = 16.dp)
                         .clickable {
-                            launchActivity(HomeBottomNavActivity::class.java)
+                            launchActivity(DataStoreCryptographyActivity::class.java)
                         },
-                    text = "HomeBottomNavActivity",
+                    text = "DataStore Cryptography Activity",
                     fontSize = 20.sp
                 )
 
@@ -51,25 +52,9 @@ class ComposeDemoActivity : ComponentActivity() {
                     modifier = Modifier
                         .padding(horizontal = 16.dp)
                         .clickable {
-                            launchActivity(FeatureDemoActivity::class.java)
+                            launchActivity(StringCryptographyActivity::class.java)
                         },
-                    text = "FeatureDemoActivity",
-                    fontSize = 20.sp
-                )
-
-                Divider(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 16.dp, vertical = 8.dp)
-                )
-
-                Text(
-                    modifier = Modifier
-                        .padding(horizontal = 16.dp)
-                        .clickable {
-                            launchActivity(CryptographyActivity::class.java)
-                        },
-                    text = "CryptographyActivity",
+                    text = "String Cryptography Activity",
                     fontSize = 20.sp
                 )
 

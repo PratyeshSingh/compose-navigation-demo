@@ -1,0 +1,15 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+
+        <activity
+            android:name="com.cryptography.datastore.DataStoreCryptographyActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".string.StringCryptographyActivity"
+            android:exported="true"/>
+
+    </application>
+
+</manifest>
