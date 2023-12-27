@@ -3,6 +3,8 @@ import org.jetbrains.kotlin.gradle.plugin.extraProperties
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -75,6 +77,14 @@ dependencies {
     //Nav controller
     implementation(libraries.androidXNavigation)
 
+    // Dagger & Hilt
+    implementation(libraries.dagger)
+    implementation(libraries.daggerLint)
+    ksp(libraries.daggerCompiler)
+
+    implementation(libraries.hiltCore)
+    implementation(libraries.hiltAndroid)
+    ksp(libraries.hiltCompiler)
 
     implementation (libraries.collectionsImmutable)
     implementation(libraries.coroutinesCore)

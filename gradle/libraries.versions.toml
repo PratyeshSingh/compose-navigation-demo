@@ -10,6 +10,8 @@ mockitoKotlin                   = '3.2.0'
 mockitoAndroid                  = '3.12.4'
 materialIconCore                = '1.5.2'
 cameraxVersion                  = '1.3.0-rc01'
+dagger                          = "2.50"
+roomVersion                     = "2.6.1"
 
 #[plugins]
 #kspPlugin              = { id = "com.google.devtools.ksp", version.ref = "kspVersion" }
@@ -61,3 +63,21 @@ camera-lifecycle         = { module = "androidx.camera:camera-lifecycle", versio
 camera-video              = { module = "androidx.camera:camera-video", version.ref = "cameraxVersion" }
 camera-view              = { module = "androidx.camera:camera-view", version.ref = "cameraxVersion" }
 camera-extensions        = { module = "androidx.camera:camera-extensions", version.ref = "cameraxVersion" }
+
+# Room
+room-runtime             = {module = "androidx.room:room-runtime", version.ref = "roomVersion"}
+room-compiler            = {module = "androidx.room:room-compiler", version.ref = "roomVersion"}
+room-ktx                 = {module = "androidx.room:room-ktx", version.ref = "roomVersion"}
+database-sqlcipher       = "net.zetetic:android-database-sqlcipher:4.5.3"
+sqlite                   = "androidx.sqlite:sqlite:2.4.0"
+
+# Dependency Injection
+dagger                   = {module = "com.google.dagger:dagger", version.ref = "dagger"}
+daggerSPI                = {module = "com.google.dagger:dagger-spi", version.ref = "dagger"}
+daggerCompiler           = {module = "com.google.dagger:dagger-compiler", version.ref = "dagger"}
+daggerLint               = {module = "com.google.dagger:dagger-lint-aar", version.ref = "dagger"}
+hiltCore                 = {module = "com.google.dagger:hilt-core", version.ref = "dagger"}
+hiltAndroid              = {module = "com.google.dagger:hilt-android", version.ref = "dagger"}
+gradlePlugin-hilt        = {module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "dagger"}
+hiltTesting              = {module = "com.google.dagger:hilt-android-testing", version.ref = "dagger"}
+hiltCompiler             = {module = "com.google.dagger:hilt-compiler", version.ref = "dagger"}

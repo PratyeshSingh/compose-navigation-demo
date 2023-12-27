@@ -2,6 +2,8 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.serialization")
+    id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -13,6 +15,14 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += mapOf(
+                    "room.schemaLocation" to "$projectDir/schemas",
+                    "room.incremental" to "true"
+                )
+            }
+        }
     }
 
     buildTypes {
@@ -46,10 +56,6 @@ android {
 
 dependencies {
 
-    // project compose nav
-    implementation(project(":app-routes"))
-    implementation(project(":experience:home:home-public"))
-
     implementation(libraries.datastore.preferences)
     implementation(libraries.kotlinx.serialization.json)
 
@@ -65,6 +71,22 @@ dependencies {
     //Nav controller
     implementation(libraries.androidXNavigation)
 
+    // Dagger & Hilt
+    implementation(libraries.dagger)
+    implementation(libraries.daggerLint)
+    ksp(libraries.daggerCompiler)
+
+    implementation(libraries.hiltCore)
+    implementation(libraries.hiltAndroid)
+    ksp(libraries.hiltCompiler)
+
+    // Room
+    implementation(libraries.room.runtime)
+    annotationProcessor(libraries.room.compiler)
+    ksp(libraries.room.compiler)
+    implementation(libraries.room.ktx)
+    implementation(libraries.database.sqlcipher)
+    implementation(libraries.sqlite)
 
     implementation(libraries.androidXNavigation)
     implementation(libraries.coroutinesCore)
