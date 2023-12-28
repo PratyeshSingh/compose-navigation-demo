@@ -18,19 +18,19 @@ import com.cryptography.CryptoManager
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
+
+private val Context.dataStore by dataStore(
+    fileName = "user-settings.json",
+    serializer = UserSettingsSerializer(CryptoManager())
+)
+
 class DataStoreCryptographyActivity : ComponentActivity() {
 
-    private val Context.dataStore by dataStore(
-        fileName = "user-settings.json",
-        serializer = UserSettingsSerializer(CryptoManager())
-    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            DataStoreCryptographyScreen(
-                dataStore
-            )
+            DataStoreCryptographyScreen(dataStore)
         }
     }
 }

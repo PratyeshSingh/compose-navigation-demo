@@ -3,6 +3,8 @@ import org.jetbrains.kotlin.gradle.plugin.extraProperties
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -32,17 +34,17 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_20
+        targetCompatibility = JavaVersion.VERSION_20
     }
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = "20"
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.5.3"
     }
     packaging {
         resources {
@@ -75,6 +77,14 @@ dependencies {
     //Nav controller
     implementation(libraries.androidXNavigation)
 
+    // Dagger & Hilt
+    implementation(libraries.dagger)
+    implementation(libraries.daggerLint)
+    ksp(libraries.daggerCompiler)
+
+    implementation(libraries.hiltCore)
+    implementation(libraries.hiltAndroid)
+    ksp(libraries.hiltCompiler)
 
     implementation (libraries.collectionsImmutable)
     implementation(libraries.coroutinesCore)
