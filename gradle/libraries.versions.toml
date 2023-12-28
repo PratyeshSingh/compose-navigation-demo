@@ -4,12 +4,12 @@ minSdk                         = "24"
 targetSdk                      = "34"
 androidGradlePluginVersion-experiment = '8.1.0-beta05'
 androidGradlePluginVersion-stable8 = '8.0.2'
-composeCompiler                 = "1.4.3"
-kotlinxCoroutinesCore           = '1.6.2'
+composeCompiler                 = "1.5.4"
+kotlinxCoroutinesCore           = '1.7.1'
 mockitoKotlin                   = '3.2.0'
 mockitoAndroid                  = '3.12.4'
-materialIconCore                = '1.5.2'
-cameraxVersion                  = '1.3.0-rc01'
+materialIconCore                = '1.5.4'
+cameraxVersion                  = '1.3.1'
 dagger                          = "2.50"
 roomVersion                     = "2.6.1"
 
@@ -20,12 +20,12 @@ roomVersion                     = "2.6.1"
 
 [libraries]
 datastore-preferences  = "androidx.datastore:datastore-preferences:1.0.0"
-kotlinx-serialization-json= "org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2"
-composeBom             = "androidx.compose:compose-bom:2023.03.00"
-androidXNavigation     = "androidx.navigation:navigation-compose:2.7.1"
-activityCompose        = "androidx.activity:activity-compose:1.7.2"
-lifecycleRuntime-ktx   = "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
-androidxCore           = "androidx.core:core-ktx:1.9.0"
+kotlinx-serialization-json= "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1"
+composeBom             = "androidx.compose:compose-bom:2023.10.01"
+androidXNavigation     = "androidx.navigation:navigation-compose:2.7.6"
+activityCompose        = "androidx.activity:activity-compose:1.8.2"
+lifecycleRuntime-ktx   = "androidx.lifecycle:lifecycle-runtime-ktx:2.6.2"
+androidxCore           = "androidx.core:core-ktx:1.12.0"
 composeUi              = { module = "androidx.compose.ui:ui", version.ref = "composeCompiler" }
 composeUiGraphics      = { module = "androidx.compose.ui:ui-graphics" }
 composeUiToolingPreview= { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "composeCompiler" }
@@ -47,14 +47,14 @@ mockitoKotlin          = { module = "org.mockito.kotlin:mockito-kotlin" , versio
 mockitoAndroid         = { module = "org.mockito:mockito-android" , version.ref = "mockitoAndroid" }
 
 # Image loading sdk
-coilCompose            = "io.coil-kt:coil-compose:1.4.0"
+coilCompose            = "io.coil-kt:coil-compose:2.4.0"
 
 # For runtiime permission
 accompanistPermissions = "com.google.accompanist:accompanist-permissions:0.22.1-rc"
 
 # Video player sdk
-exoplayerCore          = "com.google.android.exoplayer:exoplayer-core:2.15.1"
-exoplayerUi            = "com.google.android.exoplayer:exoplayer-ui:2.15.1"
+exoplayerCore          = "com.google.android.exoplayer:exoplayer-core:2.19.1"
+exoplayerUi            = "com.google.android.exoplayer:exoplayer-ui:2.19.1"
 
 # Camera Sdk to capture image & video
 camera-core              = { module = "androidx.camera:camera-core", version.ref = "cameraxVersion" }
@@ -69,7 +69,6 @@ room-runtime             = {module = "androidx.room:room-runtime", version.ref =
 room-compiler            = {module = "androidx.room:room-compiler", version.ref = "roomVersion"}
 room-ktx                 = {module = "androidx.room:room-ktx", version.ref = "roomVersion"}
 database-sqlcipher       = "net.zetetic:android-database-sqlcipher:4.5.3"
-sqlite                   = "androidx.sqlite:sqlite:2.4.0"
 
 # Dependency Injection
 dagger                   = {module = "com.google.dagger:dagger", version.ref = "dagger"}
