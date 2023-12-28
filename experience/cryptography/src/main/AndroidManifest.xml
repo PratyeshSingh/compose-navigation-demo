@@ -10,6 +10,10 @@
             android:name=".string.StringCryptographyActivity"
             android:exported="true"/>
 
+        <activity
+            android:name=".database.SQLiteCryptographyActivity"
+            android:exported="true"/>
+
     </application>
 
 </manifest>
