@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.cryptography.database.SQLiteCryptographyActivity
 import com.cryptography.datastore.DataStoreCryptographyActivity
 import com.cryptography.string.StringCryptographyActivity
 
@@ -55,6 +56,22 @@ class CryptographyActivity : ComponentActivity() {
                             launchActivity(StringCryptographyActivity::class.java)
                         },
                     text = "String Cryptography Activity",
+                    fontSize = 20.sp
+                )
+
+                Divider(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp, vertical = 8.dp)
+                )
+
+                Text(
+                    modifier = Modifier
+                        .padding(horizontal = 16.dp)
+                        .clickable {
+                            launchActivity(SQLiteCryptographyActivity::class.java)
+                        },
+                    text = "SQLite Cryptography Activity",
                     fontSize = 20.sp
                 )
 
