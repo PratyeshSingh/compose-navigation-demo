@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "person", indices = [Index(value = ["id"], unique = true)])
 data class Person(
-    @PrimaryKey val id: Long? = null,
+    @PrimaryKey val id: Long,
     @ColumnInfo(name = "first_name") val firstName: String? = null,
     @ColumnInfo(name = "last_name") val lastName: String? = null,
     @ColumnInfo(name = "height") val height: Double? = null,
